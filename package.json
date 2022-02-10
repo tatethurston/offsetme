@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "heroku-postbuild": "next-build",
-    "start": "next start",
+    "heroku-postbuild": "next build",
+    "start": "next start --port ${PORT:-3000}",
     "lint": "next lint"
   },
   "dependencies": {
