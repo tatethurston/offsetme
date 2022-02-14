@@ -3,3 +3,13 @@
 [Google Analytics](https://analytics.google.com/analytics/web/#/p303081828/reports/reportinghub)
 
 [Cloudflare CDN](https://dash.cloudflare.com/0a6f920e4cd4b08198ecfdf8cbf909ca/offsetme.app)
+
+### Local Dev
+
+`. .env.dev`
+
+#### First Time Setup
+
+`nvm use`
+`yarn install`
+`createdb offsetme_development`
