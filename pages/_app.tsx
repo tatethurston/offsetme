@@ -1,10 +1,27 @@
+import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import { GOOGLE_ANALYTICS_ID } from "../src/config";
-import "../styles/globals.scss";
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      grey: "#f2f2f2",
+      primary: "#6ce0a8",
+      bg: "#f9f9f9",
+    },
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "#f9f9f9",
+      },
+    },
+  },
+});
 
 function useGoogleAnalyticsTrackPageview(): void {
   const router = useRouter();
@@ -67,7 +84,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 }
