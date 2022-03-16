@@ -7,15 +7,15 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "heroku-postbuild": "next build",
     "start": "next start --port ${PORT:-3000}",
-    "lint": "next lint",
-    "db:migrate:no-types": "yarn knex migrate:latest",
+    "build": "next build",
     "db:migrate": "yarn knex migrate:latest && yarn db:types",
+    "db:migrate:heroku": "knex migrate:latest",
+    "db:types": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development kanel --config src/db/.kanelrc.js",
+    "heroku-postbuild": "next build",
     "knex": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development knex --knexfile ./src/db/knexfile.js",
-    "psql": "PGDATABASE=offsetme_development PGHOST=localhost PGUSER=postgres psql",
-    "db:types": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development kanel --config src/db/.kanelrc.js"
+    "lint": "next lint",
+    "psql": "PGDATABASE=offsetme_development PGHOST=localhost PGUSER=postgres psql"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
