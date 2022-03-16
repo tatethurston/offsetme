@@ -10,7 +10,7 @@
     "start": "next start --port ${PORT:-3000}",
     "build": "next build",
     "db:migrate": "yarn knex migrate:latest && yarn db:types",
-    "db:migrate:heroku": "knex migrate:latest",
+    "db:migrate:heroku": "knex migrate:latest --knexfile ./src/db/knexfile.js",
     "db:types": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development kanel --config src/db/.kanelrc.js",
     "heroku-postbuild": "next build",
     "knex": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development knex --knexfile ./src/db/knexfile.js",
