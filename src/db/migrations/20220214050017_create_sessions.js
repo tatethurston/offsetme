@@ -8,7 +8,7 @@ const TABLE = "sessions";
 exports.up = function (knex) {
   return knex.raw(
     `CREATE TABLE ${TABLE} (
-       id varchar PRIMARY KEY,
+       token varchar PRIMARY KEY,
        user_id bigserial NOT NULL,
        expires_at timestamptz NOT NULL,
        created_at timestamptz NOT NULL DEFAULT NOW(),

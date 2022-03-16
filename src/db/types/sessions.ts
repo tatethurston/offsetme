@@ -7,7 +7,7 @@ export type sessionsId = string & { " __flavor"?: 'sessions' };
 
 export default interface sessions {
   /** Primary key. Index: sessions_pkey */
-  id: sessionsId;
+  token: sessionsId;
 
   /** Index: sessions_user_id_key */
   user_id: usersId;
@@ -21,7 +21,7 @@ export default interface sessions {
 
 export interface sessionsInitializer {
   /** Primary key. Index: sessions_pkey */
-  id: sessionsId;
+  token: sessionsId;
 
   /**
    * Default value: nextval('sessions_user_id_seq'::regclass)

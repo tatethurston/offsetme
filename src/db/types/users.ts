@@ -10,7 +10,7 @@ export default interface users {
   /** Index: users_email_key */
   email: string;
 
-  name: string;
+  name: string | null;
 
   image_url: string | null;
 
@@ -29,7 +29,7 @@ export interface usersInitializer {
   /** Index: users_email_key */
   email: string;
 
-  name: string;
+  name?: string | null;
 
   image_url?: string | null;
 

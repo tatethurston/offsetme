@@ -13,8 +13,9 @@
     "lint": "next lint",
     "db:migrate:no-types": "yarn knex migrate:latest",
     "db:migrate": "yarn knex migrate:latest && yarn db:types",
-    "knex": "knex --knexfile ./src/db/knexfile.js",
-    "db:types": "kanel --config src/db/.kanelrc.js"
+    "knex": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development knex --knexfile ./src/db/knexfile.js",
+    "psql": "PGDATABASE=offsetme_development PGHOST=localhost PGUSER=postgres psql",
+    "db:types": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development kanel --config src/db/.kanelrc.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
@@ -23,6 +24,7 @@
     "framer-motion": "^6",
     "knex": "^1.0.3",
     "next": "12.0.10",
+    "next-auth": "^4.2.1",
     "pg": "^8.7.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

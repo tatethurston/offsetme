@@ -1,16 +1,14 @@
 // @generated
 // Automatically generated. Don't change this file manually.
 
-import { usersId } from './users';
-
 export type login_tokensId = string & { " __flavor"?: 'login_tokens' };
 
 export default interface login_tokens {
   /** Primary key. Index: login_tokens_pkey */
-  id: login_tokensId;
+  token: login_tokensId;
 
-  /** Index: login_tokens_user_id_key */
-  user_id: usersId;
+  /** Index: login_tokens_email_key */
+  email: string;
 
   expires_at: Date;
 
@@ -21,10 +19,10 @@ export default interface login_tokens {
 
 export interface login_tokensInitializer {
   /** Primary key. Index: login_tokens_pkey */
-  id: login_tokensId;
+  token: login_tokensId;
 
-  /** Index: login_tokens_user_id_key */
-  user_id: usersId;
+  /** Index: login_tokens_email_key */
+  email: string;
 
   expires_at: Date;
 

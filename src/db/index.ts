@@ -12,17 +12,17 @@ declare module "knex/types/tables" {
     users: Knex.CompositeTableType<
       users,
       WithoutAutomaticFields<usersInitializer>,
-      WithoutAutomaticFields<usersInitializer>
+      Partial<WithoutAutomaticFields<usersInitializer>>
     >;
     sessions: Knex.CompositeTableType<
       sessions,
       WithoutTimestamps<sessionsInitializer>,
-      WithoutTimestamps<sessionsInitializer>
+      Partial<WithoutTimestamps<sessionsInitializer>>
     >;
     login_tokens: Knex.CompositeTableType<
       login_tokens,
       WithoutTimestamps<login_tokensInitializer>,
-      WithoutTimestamps<login_tokensInitializer>
+      Partial<WithoutTimestamps<login_tokensInitializer>>
     >;
   }
 }

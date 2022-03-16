@@ -3,7 +3,7 @@ import { Page } from "../src/components/Page";
 import { Link } from "../src/components/Link";
 import { Container, Heading } from "@chakra-ui/react";
 
-const Home: NextPage = () => (
+const Terms: NextPage = () => (
   <Page>
     <Container maxW="container.md" p="12">
       <Heading as="h1" size="lg" py="10">
@@ -588,4 +588,4 @@ const Home: NextPage = () => (
   </Page>
 );
 
-export default Home;
+export default Terms;

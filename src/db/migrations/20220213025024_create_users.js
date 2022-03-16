@@ -10,7 +10,7 @@ exports.up = function (knex) {
     `CREATE TABLE ${TABLE} (
        id bigserial PRIMARY KEY,
        email varchar NOT NULL,
-       name varchar NOT NUll,
+       name varchar,
        image_url varchar,
        created_at timestamptz NOT NULL DEFAULT NOW(),
        updated_at timestamptz NOT NULL DEFAULT NOW(),

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import { GOOGLE_ANALYTICS_ID } from "../src/config";
+import { SessionProvider } from "next-auth/react";
 
 const theme = extendTheme({
   colors: {
@@ -84,9 +85,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
-      </ChakraProvider>
+      <SessionProvider session={pageProps.session}>
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </SessionProvider>
     </>
   );
 }

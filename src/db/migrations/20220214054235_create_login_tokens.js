@@ -8,14 +8,13 @@ const TABLE = "login_tokens";
 exports.up = function (knex) {
   return knex.raw(
     `CREATE TABLE ${TABLE} (
-       id varchar PRIMARY KEY,
-       user_id bigint NOT NULL,
+       token varchar PRIMARY KEY,
+       email varchar NOT NULL,
        expires_at timestamptz NOT NULL,
        created_at timestamptz NOT NULL DEFAULT NOW(),
        updated_at timestamptz NOT NULL DEFAULT NOW(), 
 
-       UNIQUE(user_id),
-       CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id)
+       UNIQUE(email)
     );
 
     ${updatedAtTrigger(TABLE)}`

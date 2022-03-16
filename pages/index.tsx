@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import {
   Box,
-  Button,
   Container,
   Flex,
   Heading,
@@ -13,6 +12,7 @@ import {
 import { FcBiomass, FcDonate, FcEngineering } from "react-icons/fc";
 import { FC, ReactElement } from "react";
 import { Page } from "../src/components/Page";
+import { ButtonLink } from "../src/components/ButtonLink";
 
 interface FeatureProps {
   title: string;
@@ -64,18 +64,10 @@ const Home: NextPage = () => (
           Accept donations. Reduce carbon. Help the planet.
         </Text>
         <Stack spacing={6} direction="row">
-          <Button
-            rounded="full"
-            px={6}
-            colorScheme="green"
-            bg="green.400"
-            _hover={{ bg: "green.500" }}
-          >
+          <ButtonLink primary href="/signup">
             Get started
-          </Button>
-          <Button rounded="full" px={6}>
-            Learn more
-          </Button>
+          </ButtonLink>
+          <ButtonLink href="/faq">Learn more</ButtonLink>
         </Stack>
       </Stack>
     </Container>

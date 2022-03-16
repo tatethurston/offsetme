@@ -1,15 +1,8 @@
-import Image from "next/image";
-import {
-  Box,
-  Button,
-  Container,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Container, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FC } from "react";
 import { Link } from "./Link";
+import { ButtonLink } from "./ButtonLink";
 
 interface NavLinkProps {
   href: string;
@@ -17,38 +10,24 @@ interface NavLinkProps {
 }
 
 const NavLink: FC<NavLinkProps> = ({ href, children, primary = false }) => {
-  const props = primary
-    ? {
-        colorScheme: "green",
-        bg: "green.400",
-        _hover: { bg: "green.500" },
-      }
-    : {};
   return (
-    <NextLink href={href} passHref>
-      <a>
-        <Button
-          mx="3"
-          rounded="full"
-          variant={primary ? "solid" : "ghost"}
-          {...props}
-        >
-          {children}
-        </Button>
-      </a>
-    </NextLink>
+    <Box mx="3">
+      <ButtonLink
+        href={href}
+        primary={primary}
+        variant={primary ? undefined : "ghost"}
+      >
+        {children}
+      </ButtonLink>
+    </Box>
   );
 };
 
 const Logo = () => (
   <NextLink href="/" passHref>
     <a style={{ height: "32px" }}>
-      <Image
-        alt="home"
-        height="32px"
-        width="32px"
-        src="/../public/favicon-32x32.png"
-      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img alt="home" height="32px" width="32px" src="/favicon-32x32.png" />
     </a>
   </NextLink>
 );
@@ -96,7 +75,7 @@ const Nav: FC = () => (
   >
     <Box display="flex" alignItems="center">
       <Logo />
-      <NavLink href="/faq">FAQ</NavLink>
+      <NavLink href="/faq">How it works</NavLink>
     </Box>
     <Box display="flex" alignItems="center">
       <NavLink href="/login">Login</NavLink>
