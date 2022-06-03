@@ -1,2 +1,2 @@
 web: yarn start
-release: yarn db:migrate:heroku
+release: yarn heroku:db:migrate

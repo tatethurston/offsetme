@@ -5,28 +5,28 @@
     "node": "16.14",
     "yarn": "1.22"
   },
+  "prisma": {
+    "schema": "src/db/schema.prisma"
+  },
   "scripts": {
     "dev": "next dev",
     "start": "next start --port ${PORT:-3000}",
     "build": "next build",
-    "db:migrate": "yarn knex migrate:latest && yarn db:types",
-    "db:migrate:heroku": "knex migrate:latest --knexfile ./src/db/knexfile.js",
-    "db:types": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development kanel --config src/db/.kanelrc.js",
+    "db:repl": "PGDATABASE=offsetme_development PGHOST=localhost PGUSER=postgres psql",
     "heroku-postbuild": "next build",
-    "knex": "DATABASE_URL=postgres://postgres:@localhost:5432/offsetme_development knex --knexfile ./src/db/knexfile.js",
-    "lint": "next lint",
-    "psql": "PGDATABASE=offsetme_development PGHOST=localhost PGUSER=postgres psql"
+    "heroku:db:migrate": "prisma migrate deploy",
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@prisma/client": "^3.14.0",
     "@sendgrid/mail": "^7.6.1",
     "framer-motion": "^6",
-    "knex": "^1.0.3",
     "next": "12.0.10",
     "next-auth": "^4.2.1",
-    "pg": "^8.7.3",
+    "prisma": "^3.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1"
@@ -37,7 +37,6 @@
     "@types/react": "17.0.39",
     "eslint": "8.8.0",
     "eslint-config-next": "12.0.10",
-    "kanel": "^2.4.2",
     "typescript": "4.5.5"
   }
 }

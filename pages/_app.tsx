@@ -7,6 +7,26 @@ import { useEffect } from "react";
 import { GOOGLE_ANALYTICS_ID } from "../src/config";
 import { SessionProvider } from "next-auth/react";
 
+export type Routes =
+  | { pathname: "/404"; query: string; search: string }
+  | { pathname: "/api/auth/[...nextauth]"; query: string; search: string }
+  | { pathname: "/auth/error"; query: string; search: string }
+  | { pathname: "/auth/login"; query: string; search: string }
+  | { pathname: "/auth/verify-request"; query: string; search: string }
+  | { pathname: "/dashboard"; query: string; search: string }
+  | { pathname: "/index"; query: string; search: string }
+  | { pathname: "/login"; query: string; search: string }
+  | { pathname: "/logout"; query: string; search: string }
+  | { pathname: "/privacy"; query: string; search: string }
+  | { pathname: "/signup"; query: string; search: string }
+  | { pathname: "/terms"; query: string; search: string };
+
+declare module "next/link" {
+  export type LinkProps = {
+    href: "foo";
+  };
+}
+
 const theme = extendTheme({
   colors: {
     brand: {
