@@ -67,7 +67,7 @@ const Home: NextPage = () => (
           <ButtonLink primary href="/signup">
             Get started
           </ButtonLink>
-          <ButtonLink href="/faq">Learn more</ButtonLink>
+          {/* <ButtonLink href="/faq">Learn more</ButtonLink> */}
         </Stack>
       </Stack>
     </Container>
