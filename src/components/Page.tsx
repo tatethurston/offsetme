@@ -75,10 +75,10 @@ const Nav: FC = () => (
   >
     <Box display="flex" alignItems="center">
       <Logo />
-      <NavLink href="/faq">How it works</NavLink>
+      {/* <NavLink href="/faq">How it works</NavLink> */}
     </Box>
     <Box display="flex" alignItems="center">
-      <NavLink href="/login">Login</NavLink>
+      {/* <NavLink href="/login">Login</NavLink> */}
       <NavLink primary href="/signup">
         Sign Up
       </NavLink>

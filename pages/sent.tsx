@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { Flex, Stack, Heading, Text, Container } from "@chakra-ui/react";
 
-const VerifyRequest: NextPage = () => (
+const Sent: NextPage = () => (
   <Flex minH="100vh" align="center" justify="center">
     <Container maxW="container.md" p="12">
       <Stack
@@ -11,12 +11,15 @@ const VerifyRequest: NextPage = () => (
         py={{ base: 10, md: 28 }}
       >
         <Heading as="h1" size="lg">
-          Check your email
+          You've joined
         </Heading>
-        <Text>A sign in link has been sent to your email address.</Text>
+        <Text>
+          Thank you for joining our waitlist! We will send you an email when we
+          are ready for you to create your account.
+        </Text>
       </Stack>
     </Container>
   </Flex>
 );
 
-export default VerifyRequest;
+export default Sent;

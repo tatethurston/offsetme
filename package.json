@@ -5,16 +5,10 @@
     "node": "16.14",
     "yarn": "1.22"
   },
-  "prisma": {
-    "schema": "src/db/schema.prisma"
-  },
   "scripts": {
     "dev": "next dev",
     "start": "next start --port ${PORT:-3000}",
     "build": "next build",
-    "db:repl": "PGDATABASE=offsetme_development PGHOST=localhost PGUSER=postgres psql",
-    "heroku-postbuild": "next build",
-    "heroku:db:migrate": "prisma migrate deploy",
     "lint": "next lint"
   },
   "dependencies": {
@@ -25,7 +19,6 @@
     "@sendgrid/mail": "^7.6.1",
     "framer-motion": "^6",
     "next": "12.0.10",
-    "next-auth": "^4.2.1",
     "prisma": "^3.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

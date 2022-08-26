@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Link from "next/link";
 import {
   Box,
   Container,
@@ -68,15 +67,6 @@ const Home: NextPage = () => (
           <ButtonLink primary href="/signup">
             Get started
           </ButtonLink>
-          <Link
-            href={{
-              pathname: "login",
-              query: { bob: "tate" },
-              search: "monkey=foo",
-            }}
-          >
-            Foo
-          </Link>
           <ButtonLink href="/faq">Learn more</ButtonLink>
         </Stack>
       </Stack>
